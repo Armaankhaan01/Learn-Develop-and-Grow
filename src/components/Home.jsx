@@ -31,7 +31,7 @@ const Home = () => {
               courses that matches your niche.
             </p>
             <NavLink to="/signup">
-              <button className="bg-[red] w-[200px] rounded-md my-6 mx-auto font-bold py-3 text-white md:mx-0 hover:text-white hover:scale-105 duration-150 mt-16 sm:mt-6 md:mt-4 lg:mt-2">
+              <button onClick={() => window.scrollTo(0, 0)} className="bg-[red] w-[200px] rounded-md my-6 mx-auto font-bold py-3 text-white md:mx-0 hover:text-white hover:scale-105 duration-150 mt-16 sm:mt-6 md:mt-4 lg:mt-2">
                 Get in touch
               </button>
             </NavLink>
@@ -92,9 +92,12 @@ const Home = () => {
                 Unlock your full potential and excel in personal and
                 professional growth.
               </p>
+              <p className="py-2 border-b mx-8">
+                Without Certificate
+              </p>
               <p className="py-2 border-b mx-8">Duration 6 months</p>
-              <NavLink to="/signup">
-                <button className="bg-[red] w-[150px]  md:w-[180px] rounded-md my-6 mx-auto font-medium px-6 py-3 text-white">
+              <NavLink to="/course-standard">
+                <button onClick={() => window.scrollTo(0, 0)} className="bg-[red] w-[150px]  md:w-[180px] rounded-md my-6 mx-auto font-medium px-6 py-3 text-white">
                   Enroll Now
                 </button>
               </NavLink>
@@ -108,7 +111,7 @@ const Home = () => {
             />
             <h1 className="text-3xl font-bold text-center py-8">Premium</h1>
             <p className="text-4xl text-center font-bold">
-              Rs 500 /- <span className="text-[16px]">per month</span>
+              Rs 1000 /- <span className="text-[16px]">per month</span>
             </p>
 
             <div className="text-center font-medium">
@@ -116,9 +119,12 @@ const Home = () => {
                 Unlock your full potential and excel in personal and
                 professional growth.
               </p>
+              <p className="py-2 border-b mx-8 ">
+                With Certificate
+              </p>
               <p className="py-2 border-b mx-8">Duration 12 months</p>
-              <NavLink to="/signup">
-                <button className="bg-[red] w-[150px]  md:w-[180px] rounded-md my-6 mx-auto font-medium px-6 py-3 text-white">
+              <NavLink to="/course-premium">
+                <button onClick={() => window.scrollTo(0, 0)} className="bg-[red] w-[150px]  md:w-[180px] rounded-md my-6 mx-auto font-medium px-6 py-3 text-white">
                   Enroll Now
                 </button>
               </NavLink>

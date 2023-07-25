@@ -54,16 +54,17 @@ const SignUp = () => {
               className="block text-gray-700 text-sm font-bold mb-2"
               htmlFor="email"
             >
-              Email Address
+              Contact Details
             </label>
             <input
               value={email}
               name="email"
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="email"
-              type="email"
-              placeholder="example@example.com"
+              type="text"
+              placeholder="email or mobile number"
               autoComplete="off"
+              required
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>

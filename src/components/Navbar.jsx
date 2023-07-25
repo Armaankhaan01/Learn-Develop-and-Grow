@@ -14,17 +14,17 @@ const Navbar = () => {
   const [logoText] = useTypewriter({
     words: ["Learn Develop & Grow"],
     loop: {},
-    typeSpeed: 60,
-    deleteSpeed: 30,
+    typeSpeed: 100,
+    deleteSpeed: 50,
   });
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-10 bg-[#000300] flex justify-between text-white items-center h-24 w-full mx-auto px-4 py-14">
-        <img
-          src={logo}
-          alt="/"
-          className="mx-auto bg-white w-12 h-12 ml-2 mr-4 rounded-sm"
-        />
+    <div className="fixed top-0 left-0 right-0 z-10 bg-[#000300] flex justify-between text-white items-center h-20 w-full mx-auto px-4">
+      <img
+        src={logo}
+        alt="/"
+        className="mx-auto bg-white w-12 h-12 ml-2 mr-4 rounded-sm"
+      />
       <div className="mr-24 lg:mr-[18rem] " >
         <h1 className="w-full text-[15px] md:text-[16px] lg:text-3xl font-extrabold text-white">
           {logoText}

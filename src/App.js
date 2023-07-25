@@ -11,6 +11,8 @@ import ProfessorReviewSection from "./components/ProfessorReview";
 import Community from "./components/Community";
 import Connect from "./components/Connect";
 import Contact from "./components/Contact";
+import CourseStandard from "./components/CourseStandard";
+import CoursePremium from "./components/CoursePremium";
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
           <Route path="/signin" element={<SignIn />}></Route>
           <Route path="/signup" element={<SignUp />}></Route>
           <Route path="/community" element={<Community />}></Route>
+          <Route path="/course-standard" element={<CourseStandard />}></Route>
+          <Route path="/course-premium" element={<CoursePremium />}></Route>
         </Routes>
         <Contact />
         <Testimonials />
