@@ -1,36 +1,89 @@
 import React, { useState } from "react";
+import { useLocation } from "react-router-dom";
 
 const FAQSection = () => {
   const [activeIndex, setActiveIndex] = useState(null);
-
-  const faqData = [
-    {
-      question: "What is the fees structure?",
-      answer: "Rs. 500 per month, it is negotiable.",
-    },
-    {
-      question: "What is the duration of this course?",
-      answer: "1 year, Personality Development is a never ending process.",
-    },
-    {
-      question: "When is the class provided?",
-      answer: "Every Sunday.",
-    },
-    {
-      question: "What is the timing for the class?",
-      answer: "8am to 11am.",
-    },
-    {
-      question: "Where it is located?",
-      answer:
-        "Panch Masjid Road,Thakurpukur bazar, Kolkata, West Bengal - 700063.",
-    },
-  ];
+  const location = useLocation();
+  const faqData = {
+    "/course-standard": [
+      {
+        question: "What is the fees structure for the Standard course?",
+        answer: "Rs. 500 per month, it is negotiable.",
+      },
+      {
+        question: "What is the duration of this course?",
+        answer: "6 Month, Personal Development is a never ending process.",
+      },
+      {
+        question: "When is the class provided?",
+        answer: "Every Sunday.",
+      },
+      {
+        question: "What is the timing for the class?",
+        answer: "8am to 11am.",
+      },
+      {
+        question: "Where it is located?",
+        answer:
+          "Panch Masjid Road,Thakurpukur bazar, Kolkata, West Bengal - 700063.",
+      },
+    ],
+    "/course-premium": [
+      {
+        question: "What is the fees structure for the Premium course?",
+        answer: "Rs. 1000 per month, it is negotiable.",
+      }, {
+        question: "What is the duration of Premium course?",
+        answer: "1 year, Personal Development is a never ending process.",
+      },
+      {
+        question: "When is the class provided?",
+        answer: "Every Sunday.",
+      },
+      {
+        question: "What is the timing for the class?",
+        answer: "8am to 11am.",
+      },
+      {
+        question: "Where it is located?",
+        answer:
+          "Panch Masjid Road,Thakurpukur bazar, Kolkata, West Bengal - 700063.",
+      },
+    ],
+  }
 
   const toggleAccordion = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
-
+  const currentFAQData = faqData[location.pathname] || [{
+    question: "What is the fees structure for the Premium course?",
+    answer: "Rs. 1000 per month, it is negotiable.",
+  }, {
+    question: "What is the duration of Premium course?",
+    answer: "1 year, Personal Development is a never ending process.",
+  },
+  {
+    question: "What is the fees structure for the Standard course?",
+    answer: "Rs. 500 per month, it is negotiable.",
+  },
+  {
+    question: "What is the duration of Standard course?",
+    answer: "6 Month, Personal Development is a never ending process.",
+  },
+  {
+    question: "When is the class provided?",
+    answer: "Every Sunday.",
+  },
+  {
+    question: "What is the timing for the class?",
+    answer: "8am to 11am.",
+  },
+  {
+    question: "Where it is located?",
+    answer:
+      "Panch Masjid Road,Thakurpukur bazar, Kolkata, West Bengal - 700063.",
+  },
+  ];
   return (
     <>
       <div className="container mx-auto px-4 py-8">
@@ -38,12 +91,11 @@ const FAQSection = () => {
           FAQ's
         </h2>
         <div className="grid grid-cols-1 gap-6">
-          {faqData.map((faq, index) => (
+          {currentFAQData.map((faq, index) => (
             <div
               key={index}
-              className={`bg-[#202020] text-[white] rounded-lg shadow-md p-6 ${
-                activeIndex === index ? "bg-white-100" : ""
-              }`}
+              className={`bg-[#202020] text-[white] rounded-lg shadow-md p-6 ${activeIndex === index ? "bg-white-100" : ""
+                }`}
             >
               <button
                 className="flex items-center justify-between w-full focus:outline-none"
@@ -52,9 +104,8 @@ const FAQSection = () => {
                 <span className="text-lg font-medium">{faq.question}</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className={`h-6 w-6 transform ${
-                    activeIndex === index ? "rotate-180" : ""
-                  }`}
+                  className={`h-6 w-6 transform ${activeIndex === index ? "rotate-180" : ""
+                    }`}
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"

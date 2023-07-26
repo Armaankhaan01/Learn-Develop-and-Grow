@@ -18,13 +18,12 @@ const Courses = () => {
           </p>
           <div className="text-center font-medium">
             <p className="py-2 border-b mx-8 mt-8">
-              Unlock your full potential and excel in personal and professional
-              growth.
+              Learn to speak English fluently like a native speaker.
             </p>
             <p className="py-2 border-b mx-8">Duration 6 months</p>
           </div>
-          <NavLink to="/course-standard">
-            <button className="bg-[red] w-[150px]  md:w-[180px] rounded-md my-6 mx-auto font-medium px-6 py-3 text-white">
+          <NavLink className="text-center" to="/course-standard">
+            <button className="bg-[red] w-[150px]  md:w-[180px] align-center rounded-md my-6 mx-auto font-medium px-6 py-3 text-white">
               Enroll Now
             </button>
           </NavLink>
@@ -46,7 +45,7 @@ const Courses = () => {
             </p>
             <p className="py-2 border-b mx-8">Duration 12 months</p>
           </div>
-          <NavLink to="/course-premium">
+          <NavLink className="text-center" to="/course-premium">
             <button className="bg-[red] w-[150px]  md:w-[180px] rounded-md my-6 mx-auto font-medium px-6 py-3 text-white">
               Enroll Now
             </button>
@@ -62,9 +61,3 @@ export default Courses;
 
 
 
-<div className="text-center font-medium">
-  <p className="py-2 border-b mx-8 mt-8">ENGLISH SPEAKING SKILL</p>
-  <p className="py-2 border-b mx-8 mt-8">ENGLISH GRAMMAR</p>
-  <p className="py-2 border-b mx-8 mt-8">Verbal examination will be taken at the end of course completion.</p>
-  <p className="py-2 border-b mx-8">Duration 6 months</p>
-</div>

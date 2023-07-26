@@ -89,8 +89,7 @@ const Home = () => {
             </p>
             <div className="text-center font-medium">
               <p className="py-2 border-b mx-8 mt-8">
-                Unlock your full potential and excel in personal and
-                professional growth.
+                Learn to speak English fluently like a native speaker.
               </p>
               <p className="py-2 border-b mx-8">
                 Without Certificate
