@@ -1,19 +1,66 @@
-import React, { useState } from "react";
-// import { MdAccountBox } from "react-icons/md";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import logo from "../assets/image/logo.jpg";
 
+const apiUrl = process.env.REACT_APP_BASE_URL;
 
 const SignIn = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const history = useNavigate();
+  useEffect(() => {
+    // Check if the user is logged in (e.g., token exists in local storage)
+    const token = localStorage.getItem('token');
+    const username = localStorage.getItem('username');
+    // If the token exists, the user is already logged in, redirect to another page
+    if (token) {
+      if (username === "admin") {
+        history('/admin-data');
+      } else {
+        window.alert("You are signed in")
+        history('/courses') // Replace '/courses' with the desired page path
+      }
+    }
+  }, [history]);
+  const [user, setUser] = useState({ username: "", password: "" });
+  let name, value;
+  const handleInputs = (e) => {
+    name = e.target.name;
+    value = e.target.value;
 
-  const handleSubmit = (e) => {
+    // Verify and update the input value based on the input name
+    if (name === "username") {
+      // Allow only alphanumeric characters in the username
+      value = value.replace(/[^a-zA-Z0-9]/g, "");
+    }
+
+    setUser({ ...user, [name]: value });
+  };
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(username); // Printing the user input on console,
-    console.log(password); // this can be passed to the backend server to be stored in the database.
+    const { username, password } = user;
+    try {
+      const response = await axios.post(`${apiUrl}/signin`, {
+        username,
+        password,
+      });
+      // Extract the token from the response
+      const token = await response.data.token;
 
-    setUsername("");
-    setPassword("");
+      // Save the token in local storage or a secure HTTP cookie
+      localStorage.setItem('token', token);
+      localStorage.setItem('username', username);
+
+      // Redirect to the admin data page or any other authenticated route
+      if (username === "admin") {
+        history('/admin-data');
+      } else {
+        window.alert("You are signed in")
+        history('/courses')
+      }
+    } catch (error) {
+      console.error('Error during login:', error);
+      // Handle login error, show error message, etc.
+    }
   };
 
   return (
@@ -32,14 +79,14 @@ const SignIn = () => {
               Username
             </label>
             <input
-              value={username}
+              value={user.username}
               name="username"
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight"
               id="username"
               type="text"
               placeholder="Enter your username"
               autoComplete="off"
-              onChange={(e) => setUsername(e.target.value)}
+              onChange={handleInputs}
             />
           </div>
           <div className="mb-6">
@@ -50,14 +97,14 @@ const SignIn = () => {
               Password
             </label>
             <input
-              value={password}
+              value={user.password}
               name="password"
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3"
               id="password"
               type="password"
               placeholder="********"
               autoComplete="off"
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={handleInputs}
             />
           </div>
           <div className="grid grid-rows-2">

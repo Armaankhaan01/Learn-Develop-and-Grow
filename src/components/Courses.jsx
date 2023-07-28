@@ -36,7 +36,7 @@ const Courses = () => {
           />
           <h1 className="text-3xl font-bold text-center py-8">Premium</h1>
           <p className="text-4xl text-center font-bold">
-            Rs 500 /- <span className="text-[16px]">per month</span>
+            Rs 1000 /- <span className="text-[16px]">per month</span>
           </p>
           <div className="text-center font-medium">
             <p className="py-2 border-b mx-8 mt-8">

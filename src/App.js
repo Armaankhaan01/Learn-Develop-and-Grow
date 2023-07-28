@@ -13,6 +13,7 @@ import Connect from "./components/Connect";
 import Contact from "./components/Contact";
 import CourseStandard from "./components/CourseStandard";
 import CoursePremium from "./components/CoursePremium";
+import AdminPanel from "./components/AdminPanel";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="/signin" element={<SignIn />}></Route>
           <Route path="/signup" element={<SignUp />}></Route>
           <Route path="/community" element={<Community />}></Route>
+          <Route path="/admin-data" element={<AdminPanel />}></Route>
           <Route path="/course-standard" element={<CourseStandard />}></Route>
           <Route path="/course-premium" element={<CoursePremium />}></Route>
         </Routes>

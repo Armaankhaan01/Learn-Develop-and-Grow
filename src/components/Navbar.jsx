@@ -6,7 +6,7 @@ import logo from "../assets/image/logo.jpg";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
-
+  const token = localStorage.getItem('token');
   const handleNav = () => {
     setNav(!nav);
   };
@@ -17,6 +17,15 @@ const Navbar = () => {
     typeSpeed: 100,
     deleteSpeed: 50,
   });
+
+  const handleLogout = () => {
+    // Remove the token from local storage
+    localStorage.removeItem('token');
+    localStorage.removeItem('username');
+
+    // Redirect to the sign-in page after logout
+    window.location.href = "/signin"; // Replace with your sign-in page URL
+  };
 
   return (
     <div className="fixed top-0 left-0 right-0 z-10 bg-[#000300] flex justify-between text-white items-center h-20 w-full mx-auto px-4">
@@ -47,16 +56,31 @@ const Navbar = () => {
             Courses
           </li>
         </NavLink>
-        <NavLink to="/signup">
-          <button className="p-2 mx-1 lg:mx-4 w-[120px] bg-transparent border-2 border-white text-white font-bold rounded-full hover:border-[red] hover:bg-[red] duration-150">
-            Sign Up
+        {token ? (
+          // Show "Logout" button when the user is signed in
+
+          <button
+            className="p-2 mx-1 lg:mx-4 w-[120px] bg-transparent border-2 border-white text-white font-bold rounded-full hover:border-[red] hover:bg-[red] duration-150"
+            onClick={handleLogout}
+          >
+            Logout
           </button>
-        </NavLink>
-        <NavLink to="/signin">
-          <button className="p-2.5 mx-1 lg:mx-2 w-[120px] bg-[red] text-white font-bold rounded-full hover:opacity-80 duration-150">
-            Sign In
-          </button>
-        </NavLink>
+
+        ) : (
+          // Show "Sign Up" and "Sign In" buttons when the user is not signed in
+          <>
+            <NavLink to="/signup">
+              <button className="p-2 mx-1 lg:mx-4 w-[120px] bg-transparent border-2 border-white text-white font-bold rounded-full hover:border-[red] hover:bg-[red] duration-150">
+                Sign Up
+              </button>
+            </NavLink>
+            <NavLink to="/signin">
+              <button className="p-2.5 mx-1 lg:mx-2 w-[120px] bg-[red] text-white font-bold rounded-full hover:opacity-80 duration-150">
+                Sign In
+              </button>
+            </NavLink>
+          </>
+        )}
       </ul>
       <div
         onClick={handleNav}
@@ -83,16 +107,31 @@ const Navbar = () => {
               Courses
             </li>
           </NavLink>
-          <NavLink to="/signup">
-            <button className="p-2 my-8 mx-auto w-full bg-transparent text-white border-2 border-[red] font-bold rounded-md hover:text-white">
-              Sign Up
-            </button>
-          </NavLink>
-          <NavLink to="/signin">
-            <button className="p-2 mx-auto w-full bg-[red] text-white font-bold rounded-md hover:text-white">
-              Sign In
-            </button>
-          </NavLink>
+          {token ? (
+            // Show "Logout" button when the user is signed in
+            <li className="p-2.5 mx-1 lg:mx-2">
+              <button
+                className="w-[120px] bg-[red] text-white font-bold rounded-full hover:opacity-80 duration-150"
+                onClick={handleLogout}
+              >
+                Logout
+              </button>
+            </li>
+          ) : (
+            // Show "Sign Up" and "Sign In" buttons when the user is not signed in
+            <>
+              <NavLink to="/signup">
+                <button className="p-2 mx-1 lg:mx-4 w-[120px] bg-transparent border-2 border-white text-white font-bold rounded-full hover:border-[red] hover:bg-[red] duration-150">
+                  Sign Up
+                </button>
+              </NavLink>
+              <NavLink to="/signin">
+                <button className="p-2.5 mx-1 lg:mx-2 w-[120px] bg-[red] text-white font-bold rounded-full hover:opacity-80 duration-150">
+                  Sign In
+                </button>
+              </NavLink>
+            </>
+          )}
         </ul>
       </div>
     </div>

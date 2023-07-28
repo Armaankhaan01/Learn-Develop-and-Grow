@@ -52,12 +52,12 @@ const Home = () => {
             <div className="flex items-center mt-6">
               <input
                 type="email"
-                class="w-full sm:w-auto px-4 py-2 rounded-l-lg border border-gray-300 focus:outline-none"
+                className="w-full sm:w-auto px-4 py-2 rounded-l-lg border border-gray-300 focus:outline-none"
                 placeholder="Email address"
               />
               <button
                 type="submit"
-                class="ml-2 px-4 py-2 rounded-r-lg bg-[red] font-bold text-white hover:opacity-80"
+                className="ml-2 px-4 py-2 rounded-r-lg bg-[red] font-bold text-white hover:opacity-80"
               >
                 Submit
               </button>

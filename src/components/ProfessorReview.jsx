@@ -1,5 +1,5 @@
 import React from "react";
-import { MdAccountBox } from "react-icons/md";
+// import { MdAccountBox } from "react-icons/md";
 import profpic from "../assets/image/profpic.jpg";
 
 
@@ -21,11 +21,11 @@ const ProfessorReviewSection = () => {
           </h1>
         </div>
         <div className="w-full shadow-md shadow-[red] flex flex-col p-4 my-auto mx-auto rounded-lg">
-          <img src={profpic} alt="/" className="mx-auto mt-[-3rem] bg-white w-20 h-20 rounded-full"/>
+          <img src={profpic} alt="/" className="mx-auto mt-[-3rem] bg-white w-20 h-20 rounded-full" />
           <p className="text-2xl text-center font-bold  border-t p-8 mt-[3rem] italic">
             {professorReview.review}
           </p>
-          <p class="py-4 mx-auto text-[16px] text-[red] font-bold border-b text-center">
+          <p className="py-4 mx-auto text-[16px] text-[red] font-bold border-b text-center">
             {" "}
             <span className="italic" >- Prof.</span> Mohammad Firoz
           </p>
