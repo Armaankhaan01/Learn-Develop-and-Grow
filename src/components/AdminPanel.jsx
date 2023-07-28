@@ -67,13 +67,14 @@ const UserTable = () => {
 
             <div className="table-auto py-8">
                 <table className="table-bordered border-collapse border border-slate-500 p-10 text-xl">
-                    <caption class="caption-top">
+                    <caption className="caption-top py-4">
                         Table : user names and contact details
                     </caption>
                     <thead>
                         <tr className='align-middle p-8'>
                             <th className="col border border-slate-600 p-2">User Name</th>
-                            <th className="col border border-slate-600 p-2">Contact Info</th>
+                            <th className="col border border-slate-600 p-2">Email</th>
+                            <th className="col border border-slate-600 p-2">Tel No.</th>
                             <th className="col border border-slate-600 p-2">Joined At</th>
                         </tr>
                     </thead>
@@ -83,6 +84,7 @@ const UserTable = () => {
                                 <tr className="align-middle" key={index}>
                                     <td className="col border border-slate-600 p-2">{element.username}</td>
                                     <td className="col border border-slate-600 p-2">{element.email}</td>
+                                    <td className="col border border-slate-600 p-2">{element.tel}</td>
                                     <td className="col border border-slate-600 p-2">{new Date(element.createdAt).toLocaleString('en-IN', option)}</td>
                                 </tr>
                             ))}
