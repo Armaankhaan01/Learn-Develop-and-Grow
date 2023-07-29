@@ -63,9 +63,8 @@ const UserTable = () => {
     };
 
     return (
-        <div className="flex flex-col items-center bg-white py-16">
-            <div className="py-4">
-
+        <div className="flex flex-col items-center bg-white py-16 w-full">
+            <div className="py-4 bg-white">
                 <div className="overflow-x-auto sm:-mx-6 lg:-mx-8 bg-white w-full px-3">
                     <div className="min-w-full py-2 sm:px-6 lg:px-8">
                         <div className="">
