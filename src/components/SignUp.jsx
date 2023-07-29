@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 import logo from "../assets/image/logo.jpg";
-
+import { logPageView } from "../utils/analytics";
 const apiUrl = process.env.REACT_APP_BASE_URL;
 
 const SignUp = () => {
+  useEffect(() => {
+    logPageView();
+  })
   const [user, setUser] = useState({ username: "", email: "", tel: "", password: "" });
   const [showWarning, setShowWarning] = useState(false);
   const history = useNavigate();

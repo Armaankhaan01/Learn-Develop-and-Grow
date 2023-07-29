@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import { logPageView } from '../utils/analytics';
 import axios from 'axios';
 
 const apiUrl = process.env.REACT_APP_BASE_URL;
@@ -20,7 +20,7 @@ const UserTable = () => {
     };
 
     useEffect(() => {
-
+        logPageView(); // Log the initial page view
         const auth = async () => {
 
             const token = await localStorage.getItem('token')
