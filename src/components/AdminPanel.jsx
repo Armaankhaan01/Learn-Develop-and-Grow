@@ -63,34 +63,40 @@ const UserTable = () => {
     };
 
     return (
-        <div className="flex items-center justify-center h-100 bg-white px-4 py-16">
+        <div className="flex flex-col items-center bg-white py-16">
+            <div className="py-4">
 
-            <div className="table-auto py-8">
-                <table className="table-bordered border-collapse border border-slate-500 p-10 text-xl">
-                    <caption className="caption-top py-4">
-                        Table : user names and contact details
-                    </caption>
-                    <thead>
-                        <tr className='align-middle p-8'>
-                            <th className="col border border-slate-600 p-2">User Name</th>
-                            <th className="col border border-slate-600 p-2">Email</th>
-                            <th className="col border border-slate-600 p-2">Tel No.</th>
-                            <th className="col border border-slate-600 p-2">Joined At</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {Array.isArray(users) &&
-                            users.map((element, index) => (
-                                <tr className="align-middle" key={index}>
-                                    <td className="col border border-slate-600 p-2">{element.username}</td>
-                                    <td className="col border border-slate-600 p-2">{element.email}</td>
-                                    <td className="col border border-slate-600 p-2">{element.tel}</td>
-                                    <td className="col border border-slate-600 p-2">{new Date(element.createdAt).toLocaleString('en-IN', option)}</td>
-                                </tr>
-                            ))}
-                    </tbody>
-                </table>
-            </div>
+                <div className="overflow-x-auto sm:-mx-6 lg:-mx-8 bg-white w-full px-3">
+                    <div className="min-w-full py-2 sm:px-6 lg:px-8">
+                        <div className="">
+                            <table className=" min-w-full border text-center text-sm font-light dark:border-neutral-500 text-xl font-[400] mx-3">
+                                <caption className="caption-top py-4">
+                                    Table : Usernames and Contact details
+                                </caption>
+                                <thead>
+                                    <tr className='align-middle border-b dark:border-neutral-500'>
+                                        <th scope="col" className="border border-slate-600 p-2">User Name</th>
+                                        <th scope="col" className="border border-slate-600 p-2">Email</th>
+                                        <th scope="col" className="border border-slate-600 p-2">Tel No.</th>
+                                        <th scope="col" className="border border-slate-600 p-2">Joined At</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {Array.isArray(users) &&
+                                        users.map((element, index) => (
+                                            <tr className="align-middle" key={index}>
+                                                <td className="border border-slate-600 p-2">{element.username}</td>
+                                                <td className="border border-slate-600 p-2">{element.email}</td>
+                                                <td className="border border-slate-600 p-2">{element.tel}</td>
+                                                <td className="border border-slate-600 p-2">{new Date(element.createdAt).toLocaleString('en-IN', option)}</td>
+                                            </tr>
+                                        ))}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div >
+            </div >
         </div >
     );
 };
