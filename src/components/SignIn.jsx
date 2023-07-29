@@ -52,14 +52,16 @@ const SignIn = () => {
 
       // Redirect to the admin data page or any other authenticated route
       if (username === "admin") {
+        window.alert("You are signed in For Admin Page")
         history('/admin-data');
       } else {
         window.alert("You are signed in")
         history('/courses')
       }
     } catch (error) {
-      console.error('Error during login:', error);
       // Handle login error, show error message, etc.
+      console.error('Error during login:', error);
+      window.alert('Error during login:', error);
     }
   };
 
