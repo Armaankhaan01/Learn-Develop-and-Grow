@@ -68,7 +68,7 @@ const UserTable = () => {
                 <div className="overflow-x-auto sm:-mx-6 lg:-mx-8 bg-white w-full px-3">
                     <div className="min-w-full py-2 sm:px-6 lg:px-8">
                         <div className="">
-                            <table className=" min-w-full border text-center text-sm font-light dark:border-neutral-500 text-xl font-[400] mx-3">
+                            <table className=" min-w-full border text-center text-sm font-light dark:border-neutral-500 text-xl font-[500] mx-3">
                                 <caption className="caption-top py-4">
                                     Table : Usernames and Contact details
                                 </caption>
