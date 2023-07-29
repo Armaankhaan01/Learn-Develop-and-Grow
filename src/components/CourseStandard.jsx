@@ -21,7 +21,7 @@ const SCourses = () => {
                             Rs 500 /- <span className="text-[16px]">per month</span>
                         </p>
                     </div>
-                    <NavLink to="/signup">
+                    <NavLink to="/signin">
                         <button onClick={() => window.scrollTo(0, 0)} className="bg-[red] w-[150px]  md:w-[180px] rounded-md my-6 mx-auto font-medium px-6 py-3 text-white" >Enroll Now</button>
                     </NavLink>
                 </div>

@@ -61,7 +61,7 @@ const PCourses = () => {
                     <p className="text-4xl text-center font-bold">
                         <span className="text-[16px]">Only</span>   Rs 1000 /- <span className="text-[16px]">per month</span>
                     </p>
-                    <NavLink to="/signup">
+                    <NavLink to="/signin">
                         <button onClick={() => window.scrollTo(0, 0)} className="bg-[red] w-[150px]  md:w-[180px] rounded-md my-6 mx-auto font-medium px-6 py-3 text-white" >Enroll Now</button>
                     </NavLink>
                 </div>
