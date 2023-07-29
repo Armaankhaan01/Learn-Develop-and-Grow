@@ -1,7 +1,7 @@
 import ReactGA from 'react-ga';
 
 export const initGA = () => {
-    ReactGA.initialize('G-FGGN19FGW3');
+    ReactGA.initialize(process.env.REACT_APP_ANALYTICS_TOKEN);
 };
 
 export const logPageView = () => {
