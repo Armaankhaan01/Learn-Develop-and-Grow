@@ -20,10 +20,7 @@ import CoursePremium from "./components/CoursePremium";
 import AdminPanel from "./components/AdminPanel";
 
 function App() {
-  useEffect(() => {
-    initGA(); // Initialize Google Analytics
-    logPageView();
-  }, []);
+
   return (
     <>
       <BrowserRouter>
@@ -48,6 +45,8 @@ function App() {
       </BrowserRouter>
     </>
   );
+
+
 }
 
 export default App;
