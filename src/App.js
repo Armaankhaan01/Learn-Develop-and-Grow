@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import React from 'react';
+import React, { useEffect } from 'react';
+import { initGA, logPageView } from './utils/analytics'; // Import the analytics functions
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import SignIn from "./components/SignIn";
@@ -17,7 +18,10 @@ import CoursePremium from "./components/CoursePremium";
 import AdminPanel from "./components/AdminPanel";
 
 function App() {
-
+  useEffect(() => {
+    initGA();
+    logPageView();
+  })
   return (
     <>
       <BrowserRouter>
