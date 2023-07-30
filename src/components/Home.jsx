@@ -6,12 +6,9 @@ import logo from "../assets/image/logo.jpg";
 import comm2 from "../assets/image/comm2.jpeg";
 import comm3 from "../assets/image/comm3.jpeg";
 import comm4 from "../assets/image/comm4.jpeg";
-// import { logPageView } from "../utils/analytics";
 
 const Home = () => {
-  // useEffect(() => {
-  //   logPageView();
-  // })
+
   return (
     <>
       <div className="w-full py-[4rem] lg:mt-[4rem] mb-[4rem] lg:mb-[1rem]  px-4 h-screen mt-10 ">

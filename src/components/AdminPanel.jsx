@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { logPageView } from '../utils/analytics';
 import axios from 'axios';
 
 const apiUrl = process.env.REACT_APP_BASE_URL;
 
 const UserTable = () => {
-    logPageView();
     const Navigate = useNavigate()
     const [users, setUsers] = useState([]);
     const option = {

@@ -1,6 +1,6 @@
 import React from "react";
-import profPic from "../assets/image/pic1.jpg"; 
-import profPic2 from "../assets/image/pic2.jpg"; 
+import profPic from "../assets/image/pic1.jpg";
+import profPic2 from "../assets/image/pic2.jpg";
 
 const Testimonials = () => {
   return (
@@ -14,7 +14,7 @@ const Testimonials = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="bg-white p-6 rounded-lg shadow-md shadow-[red]">
                 <div className="flex items-center mb-4">
-                    <img className="w-12 h-12 rounded-full mr-4 bg-white" src={profPic} alt="/" />
+                  <img className="w-12 h-12 rounded-full mr-4 bg-white" src={profPic} alt="/" />
                   <div>
                     <h4 className="text-lg font-bold text-[red]">Shuvajit Patra</h4>
                   </div>
@@ -26,7 +26,7 @@ const Testimonials = () => {
               </div>
               <div className="bg-white p-6 rounded-lg shadow-md shadow-[red]">
                 <div className="flex items-center mb-4">
-                <img className="w-12 h-12 rounded-full mr-4 bg-white" src={profPic2} alt="/" />
+                  <img className="w-12 h-12 rounded-full mr-4 bg-white" src={profPic2} alt="/" />
                   <div>
                     <h4 className="text-lg font-bold text-[red]">Nasuil Gazi</h4>
                   </div>
