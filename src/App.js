@@ -1,8 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import React, { useEffect } from 'react';
-import { initGA, logPageView } from './utils/analytics';
-import ReactGA from 'react-ga4';
-// Import the analytics functions
+import React from 'react';
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import SignIn from "./components/SignIn";
