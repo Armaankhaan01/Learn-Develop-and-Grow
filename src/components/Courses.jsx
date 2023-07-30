@@ -4,9 +4,7 @@ import { NavLink } from "react-router-dom";
 import { logPageView } from "../utils/analytics";
 
 const Courses = () => {
-  useEffect(() => {
-    logPageView();
-  })
+
   return (
     <div className="w-full pt-[12rem] pb-[2rem] px-4 bg-white">
       <div className="max-w-[1240px] mx-auto grid md:grid-cols-2 gap-8">

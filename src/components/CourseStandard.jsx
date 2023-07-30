@@ -4,9 +4,7 @@ import { logPageView } from "../utils/analytics";
 
 
 const SCourses = () => {
-    useEffect(() => {
-        logPageView();
-    })
+
     return (
         <div className="w-full bg-white ">
             <div className="max-w-[1240px] max-w-sm pt-[4rem] pb-[2rem] mx-auto bg-white ">

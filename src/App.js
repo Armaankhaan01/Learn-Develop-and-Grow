@@ -23,7 +23,6 @@ function App() {
   useEffect(() => {
     ReactGA.send({ hitType: "pageview", page: window.location.pathname + window.location.search, title: "Home Page" })
     initGA(); // Initialize Google Analytics
-    logPageView(); // Log the initial page view
   }, []);
   return (
     <>
