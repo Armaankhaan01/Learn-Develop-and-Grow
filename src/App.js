@@ -22,7 +22,7 @@ import AdminPanel from "./components/AdminPanel";
 function App() {
   useEffect(() => {
     initGA(); // Initialize Google Analytics
-    ReactGA.send({ hitType: "pageview", page: window.location.pathname + window.location.search, title: "Home Page" })
+    logPageView();
   }, []);
   return (
     <>
