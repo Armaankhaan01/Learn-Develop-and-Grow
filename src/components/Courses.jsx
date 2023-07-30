@@ -1,7 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import logo from "../assets/image/logo.jpg";
 import { NavLink } from "react-router-dom";
-import { logPageView } from "../utils/analytics";
 
 const Courses = () => {
 

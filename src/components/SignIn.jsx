@@ -2,14 +2,12 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import logo from "../assets/image/logo.jpg";
-import { logPageView } from "../utils/analytics";
-
 const apiUrl = process.env.REACT_APP_BASE_URL;
 
 const SignIn = () => {
   const history = useNavigate();
   useEffect(() => {
-    logPageView(); // Log the initial page view
+
     // Check if the user is logged in (e.g., token exists in local storage)
     const token = localStorage.getItem('token');
     const username = localStorage.getItem('username');
