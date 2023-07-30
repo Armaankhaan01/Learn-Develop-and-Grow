@@ -1,6 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React, { useEffect } from 'react';
-import { initGA, logPageView } from './utils/analytics'; // Import the analytics functions
+import { initGA, logPageView } from './utils/analytics';
+import ReactGA from 'react-ga4';
+// Import the analytics functions
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import SignIn from "./components/SignIn";
@@ -19,6 +21,7 @@ import AdminPanel from "./components/AdminPanel";
 
 function App() {
   useEffect(() => {
+    ReactGA.send({ hitType: "pageview", page: window.location.pathname + window.location.search, title: "Home Page" })
     initGA(); // Initialize Google Analytics
     logPageView(); // Log the initial page view
   }, []);
