@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-
+const apiurl = process.env.REACT_APP_BASE_URL
 const useTokenVerification = () => {
     const [loading, setLoading] = useState(true);
     const [isAuthenticated, setIsAuthenticated] = useState(false);
 
     const verifyTokenWithServer = async (token) => {
         try {
-            const response = await axios.post('http://localhost:5000/user-verification', { token });
+            const response = await axios.post(`${apiurl}/user-verification`, { token });
             setLoading(false);
             return true;
         } catch (error) {
