@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import logo from "../assets/image/logo.jpg";
@@ -6,21 +6,7 @@ const apiUrl = process.env.REACT_APP_BASE_URL;
 
 const SignIn = () => {
   const history = useNavigate();
-  useEffect(() => {
 
-    // Check if the user is logged in (e.g., token exists in local storage)
-    const token = localStorage.getItem('token');
-    const username = localStorage.getItem('username');
-    // If the token exists, the user is already logged in, redirect to another page
-    if (token) {
-      if (username === "admin") {
-        history('/admin-data');
-      } else {
-        window.alert("You are signed in")
-        history('/courses') // Replace '/courses' with the desired page path
-      }
-    }
-  }, [history]);
   const [user, setUser] = useState({ username: "", password: "" });
   let name, value;
   const handleInputs = (e) => {
@@ -61,8 +47,9 @@ const SignIn = () => {
     } catch (error) {
       // Handle login error, show error message, etc.
       console.error('Error during login:', error);
-      window.alert('Error during login:', error);
+      window.alert('Invalid credentials. Please try again.');
     }
+    setUser({ username: '', password: '' });
   };
 
   return (
@@ -112,7 +99,7 @@ const SignIn = () => {
           <div className="grid grid-rows-2">
             <button
               className="bg-[red] hover:opacity-80 text-white font-bold px-10  mx-6 rounded"
-              type="submit"
+              type="submit" disabled={!user.username || !user.password}
             >
               Sign In
             </button>

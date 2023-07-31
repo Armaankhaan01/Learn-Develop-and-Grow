@@ -1,0 +1,23 @@
+.container {
+    position: relative;
+  }
+  
+.container span {
+    position: absolute;
+    width: 20px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+    transform: rotate(calc(var(--i) * (360deg / 20))) translate(50px);
+    animation: rotationAnim 1s linear infinite;
+    animation-delay: calc(var(--i) * 0.05s);
+  }
+  
+@keyframes rotationAnim {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
