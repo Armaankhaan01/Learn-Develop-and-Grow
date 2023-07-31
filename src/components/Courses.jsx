@@ -1,11 +1,13 @@
 import React from "react";
 import logo from "../assets/image/logo.jpg";
 import { NavLink } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const Courses = () => {
 
   return (
     <div className="w-full pt-[12rem] pb-[2rem] px-4 bg-white">
+      <Helmet><title>Courses</title></Helmet>
       <div className="max-w-[1240px] mx-auto grid md:grid-cols-2 gap-8">
         <div className="w-full shadow-xl flex flex-col p-4 my-4 rounded-lg hover:scale-105 duration-300">
           <img

@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import { NavLink } from "react-router-dom";
 
 
@@ -6,6 +7,8 @@ const SCourses = () => {
 
     return (
         <div className="w-full bg-white ">
+            <Helmet><title>Standard Course </title></Helmet>
+
             <div className="max-w-[1240px] max-w-sm pt-[4rem] pb-[2rem] mx-auto bg-white ">
                 <h1 className="text-3xl font-bold text-center py-5">Basic Course</h1>
                 <div className="bg-white px-6 py-3 rounded-lg shadow-md shadow-[red]">

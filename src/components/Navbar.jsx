@@ -3,6 +3,8 @@ import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 import { NavLink } from "react-router-dom";
 import logo from "../assets/image/logo.jpg";
+import axios from "axios";
+const apiurl = process.env.REACT_APP_BASE_URL
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -18,13 +20,21 @@ const Navbar = () => {
     deleteSpeed: 50,
   });
 
-  const handleLogout = () => {
-    // Remove the token from local storage
-    localStorage.removeItem('token');
-    localStorage.removeItem('username');
+  const handleLogout = async () => {
+    try {
+      const response = await axios.post(`${apiurl}/logout`, { token });
+      // Remove the token from local storage
+      localStorage.removeItem('token');
+      localStorage.removeItem('username');
+      window.alert("Successful Logout")
+    } catch (error) {
+      window.alert("There Was an Error in Logout")
+    }
+
+
 
     // Redirect to the sign-in page after logout
-    window.location.href = "/signin"; // Replace with your sign-in page URL
+    window.location.href = "/signin";
   };
 
   return (

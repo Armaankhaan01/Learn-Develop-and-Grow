@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import logo from "../assets/image/logo.jpg";
+import { Helmet } from "react-helmet-async";
 // import { logPageView } from "../utils/analytics";
 const apiUrl = process.env.REACT_APP_BASE_URL;
 
@@ -74,6 +75,8 @@ const SignUp = () => {
 
   return (
     <div className="flex items-center justify-center h-screen bg-white px-4 py-16">
+      <Helmet><title>SignUp</title></Helmet>
+
       <div className="w-full max-w-md mt-24">
         <img
           src={logo}

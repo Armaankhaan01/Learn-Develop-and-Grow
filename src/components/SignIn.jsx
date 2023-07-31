@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import logo from "../assets/image/logo.jpg";
+import { Helmet } from "react-helmet-async";
 const apiUrl = process.env.REACT_APP_BASE_URL;
 
 const SignIn = () => {
@@ -53,7 +54,12 @@ const SignIn = () => {
   };
 
   return (
+
     <div className="flex items-center justify-center h-screen bg-white py-4 px-4">
+      <Helmet>
+        <title>Sign In</title>
+        <meta name='description' content='Personality Development Website' />
+      </Helmet>
       <div className="w-full max-w-md mt-24">
         <img src={logo} alt="/" className="mx-auto mt-[-3rem] bg-white w-20 h-20 rounded-sm" />
         <form

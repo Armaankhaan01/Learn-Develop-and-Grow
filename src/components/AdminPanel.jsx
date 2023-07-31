@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import '../App.css'
+import { Helmet } from 'react-helmet-async';
 const apiUrl = process.env.REACT_APP_BASE_URL;
 
 const UserTable = () => {
@@ -69,6 +70,8 @@ const UserTable = () => {
     if (loading) {
         return (
             <div className="flex flex-col items-center bg-white py-16 w-full">
+                <Helmet><title>Admin Panel</title></Helmet>
+
                 <div className="flex flex-col items-center bg-white py-16 w-full">
                     <div className="flex flex-col items-center bg-white py-16 w-full ">
                         <div className="py-4 bg-white">

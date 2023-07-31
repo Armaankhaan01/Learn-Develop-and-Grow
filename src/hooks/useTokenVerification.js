@@ -20,9 +20,20 @@ const useTokenVerification = () => {
 
         if (token) {
             verifyTokenWithServer(token)
-                .then((isValid) => {
+                .then(async (isValid) => {
                     setIsAuthenticated(isValid);
                     setLoading(false);
+                    if (isValid === false) {
+                        try {
+                            const response = await axios.post(`${apiurl}/logout`, { token });
+                            // Remove the token from local storage
+                            localStorage.removeItem('token');
+                            localStorage.removeItem('username');
+                            window.alert("Session Not Found, Your are logged out. Please login again. ")
+                        } catch (error) {
+                            window.alert("There Was an Error in Logout")
+                        }
+                    }
                 })
                 .catch((error) => {
                     console.log("Catch error", error);
