@@ -31,7 +31,7 @@ const Courses = () => {
             </button>
           </NavLink>
         </div>
-        <div className="w-full shadow-xl flex flex-col p-4 my-4 rounded-lg hover:scale-105 duration-300">
+        <div className="w-full shadow-xl flex flex-col p-4 my-4 rounded-lg hover:scale-105">
           <img
             src={logo}
             alt="/"

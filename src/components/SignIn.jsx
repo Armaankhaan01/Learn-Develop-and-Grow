@@ -42,8 +42,7 @@ const SignIn = () => {
         window.alert("You are signed in For Admin Page")
         history('/admin-data');
       } else {
-        window.alert("You are signed in")
-        history('/courses')
+        history('/dashboard')
       }
     } catch (error) {
       // Handle login error, show error message, etc.

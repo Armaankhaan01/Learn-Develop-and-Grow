@@ -8,8 +8,7 @@ const SCourses = () => {
     return (
         <div className="w-full bg-white ">
             <Helmet><title>Standard Course </title></Helmet>
-
-            <div className="max-w-[1240px] max-w-sm pt-[4rem] pb-[2rem] mx-auto bg-white ">
+            <div className="max-w-[1240px] mx-3 max-w-sm pt-[4rem] pb-[2rem] mx-auto bg-white ">
                 <h1 className="text-3xl font-bold text-center py-5">Basic Course</h1>
                 <div className="bg-white px-6 py-3 rounded-lg shadow-md shadow-[red]">
                     <p className="pt-3 pb-5 text-2xl font-bold text-center border-b mx-8 text-[red]">In This Course We Will Teach You </p>
@@ -25,7 +24,7 @@ const SCourses = () => {
                             Rs 500 /- <span className="text-[16px]">per month</span>
                         </p>
                     </div>
-                    <NavLink to="/signin">
+                    <NavLink to="/signin" className=" flex items-center">
                         <button onClick={() => window.scrollTo(0, 0)} className="bg-[red] w-[150px]  md:w-[180px] rounded-md my-6 mx-auto font-medium px-6 py-3 text-white" >Enroll Now</button>
                     </NavLink>
                 </div>

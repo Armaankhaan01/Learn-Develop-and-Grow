@@ -4,17 +4,17 @@ import { useTypewriter, Cursor } from "react-simple-typewriter";
 import { NavLink } from "react-router-dom";
 import logo from "../assets/image/logo.jpg";
 import axios from "axios";
-const apiurl = process.env.REACT_APP_BASE_URL
+const apiurl = process.env.REACT_APP_BASE_URL;
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
-  const token = localStorage.getItem('token');
+  const token = localStorage.getItem("token");
   const handleNav = () => {
     setNav(!nav);
   };
 
   const [logoText] = useTypewriter({
-    words: ["Learn Develop & Grow"],
+    words: ["Learn Develop and Grow"], // Separate "Grow" from the rest
     loop: {},
     typeSpeed: 100,
     deleteSpeed: 50,
@@ -22,19 +22,49 @@ const Navbar = () => {
 
   const handleLogout = async () => {
     try {
-      const response = await axios.post(`${apiurl}/logout`, { token });
+      await axios.post(`${apiurl}/logout`, { token });
       // Remove the token from local storage
-      localStorage.removeItem('token');
-      localStorage.removeItem('username');
-      window.alert("Successful Logout")
+      localStorage.removeItem("token");
+      localStorage.removeItem("username");
+      window.alert("Successful Logout");
     } catch (error) {
-      window.alert("There Was an Error in Logout")
+      window.alert("There Was an Error in Logout");
     }
-
-
 
     // Redirect to the sign-in page after logout
     window.location.href = "/signin";
+  };
+
+  // const renderRedLastFiveLetters = (text) => {
+  //   if (text.length <= 18) {
+  //     return {text};
+  //   } else {
+  //     const firstEighteenLetters = text.substring(0, 18);
+  //     const restOfText = text.substring(18);
+  //     return (
+  //       <span>
+  //         {firstEighteenLetters}
+  //         <span sclassName="animated-text">{restOfText}</span>
+  //       </span>
+  //     );
+  //   }
+  // };
+
+  const renderRedLastFiveLetters = (text) => {
+    if (text.length <= 5) {
+      // If the text is shorter than 5 characters, make the entire text red
+      return <span style={{ color: "red" }}>{text}</span>;
+    } else {
+      // Extract the last 5 characters and wrap them in a span with red color
+      const lastFiveLetters = text.substring(text.length - 5);
+      const restOfText = text.substring(0, text.length - 5);
+      return (
+        <span>
+          {restOfText}
+          <span style={{ color: "red" }}>{lastFiveLetters}</span>
+        </span>
+      );
+    }
   };
 
   return (
@@ -44,15 +74,17 @@ const Navbar = () => {
         alt="/"
         className="mx-auto bg-white w-12 h-12 ml-2 mr-4 rounded-sm"
       />
-      <div className="mr-24 lg:mr-[18rem] " >
+      <div className="mr-24 lg:mr-[18rem] ">
         <h1 className="w-full text-[15px] md:text-[16px] lg:text-3xl font-extrabold text-white">
-          {logoText}
+          {renderRedLastFiveLetters(logoText)}
           <span>
             <Cursor cursorStyle="|" cursorColor="white" />
           </span>
         </h1>
-        <div  >
-          <h6 className="text-[8px] md:text-[10px] lg:text-[12px]" >LEARNING & DEVELOPMENT CENTER</h6>
+        <div>
+          <h6 className="text-[8px] md:text-[10px] lg:text-[12px]">
+            LEARNING & DEVELOPMENT CENTER
+          </h6>
         </div>
       </div>
       <ul className="hidden md:flex">
@@ -68,14 +100,19 @@ const Navbar = () => {
         </NavLink>
         {token ? (
           // Show "Logout" button when the user is signed in
-
-          <button
-            className="p-2 mx-1 lg:mx-4 w-[120px] bg-transparent border-2 border-white text-white font-bold rounded-full hover:border-[red] hover:bg-[red] duration-150"
-            onClick={handleLogout}
-          >
-            Logout
-          </button>
-
+          <>
+            <NavLink to="/dashboard">
+              <li className="p-2 mx-1 hover:cursor-pointer hover:text-[red] hover:scale-105 duration-150">
+                Dashboard
+              </li>
+            </NavLink>
+            <button
+              className="p-2 mx-1 lg:mx-4 w-[120px] bg-transparent border-2 border-white text-white font-bold rounded-full hover:border-[red] hover:bg-[red] duration-150"
+              onClick={handleLogout}
+            >
+              Logout
+            </button>
+          </>
         ) : (
           // Show "Sign Up" and "Sign In" buttons when the user is not signed in
           <>
@@ -118,15 +155,19 @@ const Navbar = () => {
             </li>
           </NavLink>
           {token ? (
-            // Show "Logout" button when the user is signed in
-            <li className="p-2.5 mx-1 lg:mx-2">
+            <>
+              <NavLink to="/dashboard">
+                <li className="p-2 mx-1 hover:cursor-pointer hover:text-[red] hover:scale-105 pb-6">
+                  Dashboard
+                </li>
+              </NavLink>
               <button
-                className="w-[120px] bg-[red] text-white font-bold rounded-full hover:opacity-80 duration-150"
+                className="p-2 mx-1 lg:mx-4 w-[120px] bg-transparent border-2 border-white text-white font-bold rounded-full hover:border-[red] hover:bg-[red] duration-150"
                 onClick={handleLogout}
               >
                 Logout
               </button>
-            </li>
+            </>
           ) : (
             // Show "Sign Up" and "Sign In" buttons when the user is not signed in
             <>

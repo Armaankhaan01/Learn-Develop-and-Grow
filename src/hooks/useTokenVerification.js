@@ -7,43 +7,24 @@ const useTokenVerification = () => {
 
     const verifyTokenWithServer = async (token) => {
         try {
-            const response = await axios.post(`${apiurl}/user-verification`, { token });
+            await axios.post(`${apiurl}/user-verification`, { token });
             setLoading(false);
             return true;
         } catch (error) {
             return false;
         }
     };
-
     useEffect(() => {
-        const token = localStorage.getItem('token');
-
-        if (token) {
-            verifyTokenWithServer(token)
-                .then(async (isValid) => {
-                    setIsAuthenticated(isValid);
-                    setLoading(false);
-                    if (isValid === false) {
-                        try {
-                            const response = await axios.post(`${apiurl}/logout`, { token });
-                            // Remove the token from local storage
-                            localStorage.removeItem('token');
-                            localStorage.removeItem('username');
-                            window.alert("Session Not Found, Your are logged out. Please login again. ")
-                        } catch (error) {
-                            window.alert("There Was an Error in Logout")
-                        }
-                    }
-                })
-                .catch((error) => {
-                    console.log("Catch error", error);
-                    setIsAuthenticated(false);
-                    setLoading(false);
-                });
-        } else {
-            setIsAuthenticated(false);
+        const auth = async () => {
+            const token = localStorage.getItem('token');
+            const isValid = await verifyTokenWithServer(token);
+            setIsAuthenticated(isValid);
             setLoading(false);
-        }
+            if (!isValid) {
+                window.alert("Session Not Found, You are logged out. Please login again.");
+            }
+        };
+        auth();
     }, []);
 
     return { loading, isAuthenticated };

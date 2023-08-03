@@ -13,3 +13,12 @@ function PrivateOutlet() {
 }
 
 export default PrivateOutlet;
+
+
+
+// This  is how you have to define route for this veriication 
+/*
+  <Route path="/Dashboard" element={<PrivateOutlet />}>
+            <Route path="" element={<Dashboard />} />
+          </Route>
+ */

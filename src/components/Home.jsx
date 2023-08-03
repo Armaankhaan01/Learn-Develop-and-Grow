@@ -16,7 +16,6 @@ const Home = () => {
           <video
             controls
             muted
-            autoPlay
             loop
             src={homeVideo}
             width="500"
@@ -24,7 +23,7 @@ const Home = () => {
           ></video>
           <div className="flex flex-col justify-center items-center">
             <p className="text-white font-bold lg:text-4xl lg:p-8 md:text-3xl md:text-center lg:text-left sm:text-3xl text-2xl py-2 mt-4 md:mt-2 mx-4 lg:mx-auto">
-              UNLEASH & EMPOWER YOUR TRUE POTENTIAL WITH LEARN DEVELOP &{" "}
+              UNLEASH & EMPOWER YOUR TRUE POTENTIAL WITH LEARN DEVELOP & {" "}
               <span className="text-[red] font-extrabold">GROW</span>
             </p>
             <p className="font-bold text-gray-500 lg:pb-4 md:text-xl text-2xl md:ml-8 mx-4 mt-8 md:mt-2 sm:mx-8">

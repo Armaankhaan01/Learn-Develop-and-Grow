@@ -17,7 +17,8 @@ import CourseStandard from "./components/CourseStandard";
 import CoursePremium from "./components/CoursePremium";
 import AdminPanel from "./components/AdminPanel";
 import PrivateRoute from "./components/ProtectedRoute";
-import PrivateOutlet from "./components/PrivateOutlet";
+// import PrivateOutlet from "./components/PrivateOutlet"; // it secure routes diffrently 
+import Dashboard from "./components/Dashboard";
 
 
 
@@ -35,17 +36,8 @@ function AppRouter() {
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/community" element={<Community />} />
-          <Route
-            path="/admin-data"
-            element={
-              <PrivateRoute>
-                {<AdminPanel />}
-              </PrivateRoute>
-            }
-          />
-          <Route path="/Dashboard" element={<PrivateOutlet />}>
-            <Route path="" element={<Courses />} />
-          </Route>
+          <Route path="/admin-data" element={<PrivateRoute>{<AdminPanel />}</PrivateRoute>} />
+          <Route path="/dashboard" element={<PrivateRoute>{<Dashboard />}</PrivateRoute>} />
           <Route path="/course-standard" element={<CourseStandard />} />
           <Route path="/course-premium" element={<CoursePremium />} />
           {/* Add other routes as needed */}
