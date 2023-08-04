@@ -10,11 +10,13 @@ const Dashboard = () => {
   const [loading, setLoading] = useState(true);
   const [applied, setApplied] = useState(false);
   const [buttonText, setButtonText] = useState("Get in touch");
+  const [Sapplied, setSApplied] = useState(false);
+  const [SbuttonText, setSButtonText] = useState("Enroll");
+  const [Papplied, setPApplied] = useState(false);
+  const [PbuttonText, setPButtonText] = useState("Enroll");
   useEffect(() => {
     getData();
   }, []);
-  const enrollPremium = async () => {};
-  const enrollStandard = async () => {};
   const getData = async () => {
     try {
       const token = localStorage.getItem("token");
@@ -30,6 +32,14 @@ const Dashboard = () => {
         setLoading(false);
         // console.log(response)
         // Update the users state with the fetched data
+        if (response.data.data.appliedForPremium === true) {
+          setPApplied(true);
+          setPButtonText("Applied For Enrollment");
+        }
+        if (response.data.data.appliedForStandard === true) {
+          setSApplied(true);
+          setSButtonText("Applied For Enrollment");
+        }
       } else {
         console.log("Request failed:", response.data);
         window.alert("Request failed:", response.data);
@@ -55,6 +65,38 @@ const Dashboard = () => {
       setButtonText("Please try again, there was an error");
     }
   };
+
+  const enrollPremium = async () => {
+    setLoading(true);
+    try {
+      const courseName = "premium";
+      const username = users.username;
+      await axios.post(`${apiUrl}/course-apply`, { courseName, username });
+      setPApplied(true);
+      setPButtonText("Applied For Enrollment");
+      setLoading(false);
+    } catch (error) {
+      setLoading(false);
+      setPButtonText("Please try again, there was an error");
+    }
+  };
+
+  const enrollStandard = async () => {
+    setLoading(true);
+    window.scrollTo(0, 0);
+    try {
+      const courseName = "standard";
+      const username = users.username;
+      await axios.post(`${apiUrl}/course-apply`, { courseName, username });
+      setLoading(false);
+      setSApplied(true);
+      setSButtonText("Applied For Enrollment");
+    } catch (error) {
+      setLoading(false);
+      setSButtonText("Please try again, there was an error");
+    }
+  };
+
   const scrollToMission = () => {
     const missionElement = document.getElementById("mission");
     if (missionElement) {
@@ -244,8 +286,9 @@ const Dashboard = () => {
               <button
                 onClick={enrollStandard}
                 className="bg-[red] w-[150px] md:w-[180px] rounded-md my-6 mx-auto font-medium px-6 py-3 text-white"
+                disabled={Sapplied}
               >
-                Enroll Now
+                {SbuttonText}
               </button>
             </div>
           </div>
@@ -334,8 +377,9 @@ const Dashboard = () => {
                   <button
                     onClick={enrollPremium}
                     className="bg-[red] w-[150px] md:w-[180px] rounded-md my-6 mx-auto font-medium px-6 py-3 text-white"
+                    disabled={Papplied}
                   >
-                    Enroll Now
+                    {PbuttonText}
                   </button>
                 </div>
               </div>
