@@ -152,12 +152,12 @@ const Dashboard = () => {
                 {users.username}
               </span>
             </p>
-            <p className="font-medium text-gray-500 lg:pb-5 md:text-xl text-2xl md:ml-8 mx-4 mt-8 md:mt-2 sm:mx-8">
+            <p className="font-medium text-white lg:pb-5 md:text-xl text-2xl md:ml-8 mx-4 mt-8 md:mt-2 sm:mx-8">
               Unleash Your{" "}
               <span className="text-[red] font-bold">True Potential</span> with{" "}
               <span className="text-[red] font-bold">Professor Firoz</span>
             </p>
-            <p className="font-medium text-gray-500 lg:pb-5 md:text-xl text-2xl md:ml-8 mx-4 mt-8 md:mt-2 sm:mx-8">
+            <p className="font-medium text-white lg:pb-5 md:text-xl text-2xl md:ml-8 mx-4 mt-8 md:mt-2 sm:mx-8">
               The Course Which we teach in our learning & development center are
               designed to make future leaders. <br /> Beacuse we have{" "}
               <NavLink to="/dashboard/#mission" onClick={scrollToMission}>
