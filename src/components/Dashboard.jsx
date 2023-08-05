@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import homeVideo from "../assets/video/homeVideo.mp4";
 import axios from "axios";
 import { Helmet } from "react-helmet-async";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 const apiUrl = process.env.REACT_APP_BASE_URL;
 
 const Dashboard = () => {
@@ -14,9 +14,23 @@ const Dashboard = () => {
   const [SbuttonText, setSButtonText] = useState("Enroll");
   const [Papplied, setPApplied] = useState(false);
   const [PbuttonText, setPButtonText] = useState("Enroll");
+  const location = useLocation();
   useEffect(() => {
     getData();
-  }, []);
+    const scrollToHashElement = () => {
+      const hash = location.hash; // Get the hash value from the URL
+      if (hash) {
+        const element = document.getElementById(hash.substring(1)); // Remove the "#" from the hash
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" }); // Scroll to the element
+        }
+      }
+    };
+    // Scroll to the element when the component mounts
+    if (!loading) {
+      scrollToHashElement();
+    }
+  }, [loading, location.hash]);
   const getData = async () => {
     try {
       const token = localStorage.getItem("token");
@@ -83,7 +97,6 @@ const Dashboard = () => {
 
   const enrollStandard = async () => {
     setLoading(true);
-    window.scrollTo(0, 0);
     try {
       const courseName = "standard";
       const username = users.username;
@@ -97,15 +110,9 @@ const Dashboard = () => {
     }
   };
 
-  const scrollToMission = () => {
-    const missionElement = document.getElementById("mission");
-    if (missionElement) {
-      missionElement.scrollIntoView({ behavior: "smooth" });
-    }
-  };
   if (loading) {
     return (
-      <div className="flex flex-col items-center bg-black py-16 w-full">
+      <div className="flex flex-col items-center bg-black py-16 w-full z-0">
         <Helmet>
           <title>Loading</title>
         </Helmet>
@@ -134,44 +141,58 @@ const Dashboard = () => {
       <Helmet>
         <title>Dashboard</title>
       </Helmet>
-      <div className="w-full py-[4rem] lg:mt-[4rem] mb-[4rem] lg:mb-[1rem]  px-4 h-full md:h-screen lg:h-screen mt-10 0">
-        <div className="max-w-full mx-auto grid lg:grid-cols-2 items-center py-4 md:py-4">
+      <div className="w-full py-[2rem] lg:mt-[4rem] mb-[4rem] lg:mb-[1rem] px-4 h-full mt-10 z-10 ">
+        <div className="max-w-full mx-auto grid lg:grid-cols-2 items-center ">
           <video
             controls
             muted
             loop
             src={homeVideo}
             width="500"
-            className="rounded-[3%] mx-auto my-4"
+            className="rounded-[3%] mx-auto my-4 lg:w-[40vw]"
           ></video>
-          <div className="flex flex-col justify-center items-center">
-            <p className="text-white font-bold lg:text-4xl lg:p-5 md:text-3xl md:text-center lg:text-left sm:text-3xl text-2xl py-2 mt-4 md:mt-2 mx-4 lg:mx-auto">
+          <div>
+            <p className="text-white font-bold lg:text-4xl lg:p-5 md:text-3xl text-start sm:text-3xl text-2xl mx-4 lg:mx-auto">
               Hey
               <span className="text-[red] font-extrabold">
                 {" "}
                 {users.username}
               </span>
             </p>
-            <p className="font-medium text-white lg:pb-5 md:text-xl text-2xl md:ml-8 mx-4 mt-8 md:mt-2 sm:mx-8">
-              Unleash Your{" "}
-              <span className="text-[red] font-bold">True Potential</span> with{" "}
-              <span className="text-[red] font-bold">Professor Firoz</span>
+            <div className="font-medium text-white lg:pb-5 md:text-2xl text-xl md:ml-4  text-center sm:text-left mt-6 md:mt-2 sm:mx-4 pl-8">
+              <p>
+                Unleash and empower Your True Potential with Learn Develop &{" "}
+                <span className="text-[red] font-bold ">Grow</span>.
+              </p>
+            </div>
+            <p className="font-medium text-white text-center lg:pb-5 text-xl md:text-2xl lg:text-3xl md:ml-6 mx-3 mt-6 md:mt-2 sm:mx-8 md:mb-2 mb-6">
+              “India Sikhega To Aur Bhi Aage Badega.”
             </p>
-            <p className="font-medium text-white lg:pb-5 md:text-xl text-2xl md:ml-8 mx-4 mt-8 md:mt-2 sm:mx-8">
-              The Course Which we teach in our learning & development center are
-              designed to make future leaders. <br /> Beacuse we have{" "}
-              <NavLink to="/dashboard/#mission" onClick={scrollToMission}>
-                <span className="text-[red] font-bold underline">Mission</span>
-              </NavLink>{" "}
-              that's why we are at your door step.
-            </p>
-            <button
-              onClick={handleGetInTouch}
-              className="bg-[red] w-[200px] rounded-md my-6 mx-auto font-bold py-3 text-white md:mx-0 hover:text-white hover:scale-105 duration-150 mt-16 sm:mt-6 md:mt-4 lg:mt-2"
-              disabled={applied}
-            >
-              {buttonText}
-            </button>
+            <div className="font-medium text-white lg:pb-5 md:text-2xl text-xl md:ml-4 mx-1 mt-6 md:mt-2 sm:mx-4 pl-8">
+              <p>
+                The Course Which we teach in our learning & development center
+                are designed to make future leaders. <br /> Beacuse we have{" "}
+                <NavLink to="/dashboard/#mission">
+                  <span className="text-[red] font-bold underline">
+                    Mission
+                  </span>
+                </NavLink>{" "}
+                that's why we are at your door step. <br />
+                <p className="text-end py-5 my-5">
+                  - Asst. Professor{" "}
+                  <span className="text-[red] font-bold ">Mohammad Firoz</span>
+                </p>
+              </p>
+            </div>
+            <div className="flex flex-col items-center">
+              <button
+                onClick={handleGetInTouch}
+                className="bg-[red] w-[200px] rounded-md my-6 mx-auto font-bold py-3 text-white md:mx-0 hover:text-white hover:scale-105 duration-150 mt-16 sm:mt-6 md:mt-4 lg:mt-2"
+                disabled={applied}
+              >
+                {buttonText}
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -256,7 +277,7 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
-      <div className="w-full pt-[6rem] pb-[2rem] bg-white px-5">
+      <div className="w-full pt-[6rem] pb-[2rem] bg-white px-5" id="SCourse">
         <h1 className="text-[#000300] text-5xl md:text-5xl lg:text-6xl font-bold text-center mt-[-2rem] mb-[4rem]">
           Check out our <span className="text-[red]">courses.</span>
         </h1>
@@ -294,8 +315,11 @@ const Dashboard = () => {
           </div>
         </div>
         <div>
-          <div className=" max-w-[1240px] mx-auto my-8">
-            <h1 className="text-3xl font-bold text-center py-8 text-[red]">
+          <div className=" max-w-[1240px] mx-auto my-8" id="PCourse">
+            <h1
+              className="text-3xl font-bold text-center py-8 text-[red]"
+              id="PCourse"
+            >
               Premium Course
             </h1>
             <div className="grid md:grid-cols-2 gap-8 md:relative">
