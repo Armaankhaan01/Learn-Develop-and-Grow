@@ -107,8 +107,8 @@ const UserTable = () => {
       <div className="py-4 bg-white mx-8">
         <div className=" sm:-mx-6 lg:-mx-8 bg-white w-full md:px-3 lg:px-3">
           <div className="flex md:flex-col lg:flex-col items-center overflow-auto h-full w-[100vw] py-2 sm:px-6 lg:px-8">
-            <table className="border text-center text-sm font-light dark:border-neutral-500 text-xl font-[500]">
-              <caption className="caption-top py-4 text-3xl font-bold">
+            <table className="border text-center text-md font-light dark:border-neutral-500 font-[500]">
+              <caption className="caption-top py-4 text-lg md:text-3xl font-bold">
                 Table : All User's Contact details
               </caption>
               <thead>
@@ -153,11 +153,11 @@ const UserTable = () => {
           </div>
         </div>
       </div>
-      <div className="py-4 bg-white mx-8">
+        <div className="py-4 bg-white mx-8">
         <div className=" sm:-mx-6 lg:-mx-8 bg-white w-full md:px-3 lg:px-3">
           <div className="flex md:flex-col lg:flex-col items-center overflow-auto h-full w-[100vw] py-2 sm:px-6 lg:px-8">
-            <table className="border text-center text-sm font-light dark:border-neutral-500 text-xl font-[500]">
-              <caption className="caption-top py-4 text-3xl font-bold">
+            <table className="border text-center text-md font-light dark:border-neutral-500 font-[500]">
+              <caption className="caption-top py-4 text-lg md:text-3xl font-bold">
                 Table : Users applied for Premium Course
               </caption>
               <thead>
@@ -213,11 +213,11 @@ const UserTable = () => {
           </div>
         </div>
       </div>
-      <div className="py-4 bg-white mx-8">
+        <div className="py-4 bg-white mx-8">
         <div className=" sm:-mx-6 lg:-mx-8 bg-white w-full md:px-3 lg:px-3">
           <div className="flex md:flex-col lg:flex-col items-center overflow-auto h-full w-[100vw] py-2 sm:px-6 lg:px-8">
-            <table className="border text-center text-sm font-light dark:border-neutral-500 text-xl font-[500]">
-              <caption className="caption-top py-4 text-3xl font-bold">
+            <table className="border text-center text-md font-light dark:border-neutral-500 font-[500]">
+              <caption className="caption-top py-4 text-lg md:text-3xl font-bold">
                 Table : Users applied for Standard Course
               </caption>
               <thead>
@@ -273,11 +273,11 @@ const UserTable = () => {
           </div>
         </div>
       </div>
-      <div className="py-4 bg-white mx-8">
+        <div className="py-4 bg-white mx-8">
         <div className=" sm:-mx-6 lg:-mx-8 bg-white w-full md:px-3 lg:px-3">
           <div className="flex md:flex-col lg:flex-col items-center overflow-auto h-full w-[100vw] py-2 sm:px-6 lg:px-8">
-            <table className="border text-center text-sm font-light dark:border-neutral-500 text-xl font-[500]">
-              <caption className="caption-top py-4 text-3xl font-bold">
+            <table className="border text-center text-md font-light dark:border-neutral-500 font-[500]">
+              <caption className="caption-top py-4 text-lg md:text-3xl font-bold">
                 Table : Users not applied in any Courses
               </caption>
               <thead>
@@ -335,11 +335,11 @@ const UserTable = () => {
           </div>
         </div>
       </div>
-      <div className="py-4 bg-white mx-8">
+       <div className="py-4 bg-white mx-8">
         <div className=" sm:-mx-6 lg:-mx-8 bg-white w-full md:px-3 lg:px-3">
           <div className="flex md:flex-col lg:flex-col items-center overflow-auto h-full w-[100vw] py-2 sm:px-6 lg:px-8">
-            <table className="border text-center text-sm font-light dark:border-neutral-500 text-xl font-[500]">
-              <caption className="caption-top py-4 text-3xl font-bold">
+            <table className="border text-center text-md font-light dark:border-neutral-500 font-[500]">
+              <caption className="caption-top py-4 text-lg md:text-3xl font-bold">
                 Table : Users applied for Get In Touch
               </caption>
               <thead>
