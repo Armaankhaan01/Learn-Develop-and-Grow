@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import homeVideo from "../assets/video/homeVideo.mp4";
 import axios from "axios";
 import { Helmet } from "react-helmet-async";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 const apiUrl = process.env.REACT_APP_BASE_URL;
 
 const Dashboard = () => {
@@ -14,9 +14,23 @@ const Dashboard = () => {
   const [SbuttonText, setSButtonText] = useState("Enroll");
   const [Papplied, setPApplied] = useState(false);
   const [PbuttonText, setPButtonText] = useState("Enroll");
+  const location = useLocation();
   useEffect(() => {
     getData();
-  }, []);
+    const scrollToHashElement = () => {
+      const hash = location.hash; // Get the hash value from the URL
+      if (hash) {
+        const element = document.getElementById(hash.substring(1)); // Remove the "#" from the hash
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" }); // Scroll to the element
+        }
+      }
+    };
+    // Scroll to the element when the component mounts
+    if (!loading) {
+      scrollToHashElement();
+    }
+  }, [loading, location.hash]);
   const getData = async () => {
     try {
       const token = localStorage.getItem("token");
@@ -97,12 +111,6 @@ const Dashboard = () => {
     }
   };
 
-  const scrollToMission = () => {
-    const missionElement = document.getElementById("mission");
-    if (missionElement) {
-      missionElement.scrollIntoView({ behavior: "smooth" });
-    }
-  };
   if (loading) {
     return (
       <div className="flex flex-col items-center bg-black py-16 w-full">
@@ -134,7 +142,7 @@ const Dashboard = () => {
       <Helmet>
         <title>Dashboard</title>
       </Helmet>
-      <div className="w-full py-[4rem] lg:mt-[4rem] mb-[4rem] lg:mb-[1rem]  px-4 h-full md:h-screen lg:h-screen mt-10 0">
+      <div className="w-full py-[4rem] lg:mt-[4rem] mb-[4rem] lg:mb-[1rem]  px-4 h-full md:h-screen lg:h-screen mt-10">
         <div className="max-w-full mx-auto grid lg:grid-cols-2 items-center py-4 md:py-4">
           <video
             controls
@@ -160,7 +168,7 @@ const Dashboard = () => {
             <p className="font-medium text-white lg:pb-5 md:text-xl text-2xl md:ml-8 mx-4 mt-8 md:mt-2 sm:mx-8">
               The Course Which we teach in our learning & development center are
               designed to make future leaders. <br /> Beacuse we have{" "}
-              <NavLink to="/dashboard/#mission" onClick={scrollToMission}>
+              <NavLink to="/dashboard/#mission">
                 <span className="text-[red] font-bold underline">Mission</span>
               </NavLink>{" "}
               that's why we are at your door step.
@@ -256,7 +264,7 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
-      <div className="w-full pt-[6rem] pb-[2rem] bg-white px-5">
+      <div className="w-full pt-[6rem] pb-[2rem] bg-white px-5" id="SCourse">
         <h1 className="text-[#000300] text-5xl md:text-5xl lg:text-6xl font-bold text-center mt-[-2rem] mb-[4rem]">
           Check out our <span className="text-[red]">courses.</span>
         </h1>
@@ -294,7 +302,7 @@ const Dashboard = () => {
           </div>
         </div>
         <div>
-          <div className=" max-w-[1240px] mx-auto my-8">
+          <div className=" max-w-[1240px] mx-auto my-8" id="PCourse">
             <h1 className="text-3xl font-bold text-center py-8 text-[red]">
               Premium Course
             </h1>
