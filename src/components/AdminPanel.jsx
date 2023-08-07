@@ -107,7 +107,7 @@ const UserTable = () => {
             <div className="py-4 bg-white mx-8">
                 <div className=" sm:-mx-6 lg:-mx-8 bg-white w-full md:px-3 lg:px-3">
                     <div className="flex md:flex-col lg:flex-col items-center overflow-auto h-full w-[100vw] py-2 sm:px-6 lg:px-8">
-                        <table className="border text-center text-md font-light dark:border-neutral-500 font-[500]">
+                        <table className="border text-center text-md font-light dark:border-neutral-500 font-[500] table-auto">
                             <caption className="caption-top py-4 text-lg md:text-3xl font-bold">
                                 Table : All User's Contact details
                             </caption>
@@ -156,7 +156,7 @@ const UserTable = () => {
             <div className="py-4 bg-white mx-8">
                 <div className=" sm:-mx-6 lg:-mx-8 bg-white w-full md:px-3 lg:px-3">
                     <div className="flex md:flex-col lg:flex-col items-center overflow-auto h-full w-[100vw] py-2 sm:px-6 lg:px-8">
-                        <table className="border text-center text-md font-light dark:border-neutral-500 font-[500]">
+                        <table className="border text-center text-md font-light dark:border-neutral-500 font-[500] table-auto">
                             <caption className="caption-top py-4 text-lg md:text-3xl font-bold">
                                 Table : Users applied for Premium Course
                             </caption>
@@ -216,7 +216,7 @@ const UserTable = () => {
             <div className="py-4 bg-white mx-8">
                 <div className=" sm:-mx-6 lg:-mx-8 bg-white w-full md:px-3 lg:px-3">
                     <div className="flex md:flex-col lg:flex-col items-center overflow-auto h-full w-[100vw] py-2 sm:px-6 lg:px-8">
-                        <table className="border text-center text-md font-light dark:border-neutral-500 font-[500]">
+                        <table className="border text-center text-md font-light dark:border-neutral-500 font-[500] table-auto">
                             <caption className="caption-top py-4 text-lg md:text-3xl font-bold">
                                 Table : Users applied for Standard Course
                             </caption>
@@ -276,7 +276,7 @@ const UserTable = () => {
             <div className="py-4 bg-white mx-8">
                 <div className=" sm:-mx-6 lg:-mx-8 bg-white w-full md:px-3 lg:px-3">
                     <div className="flex md:flex-col lg:flex-col items-center overflow-auto h-full w-[100vw] py-2 sm:px-6 lg:px-8">
-                        <table className="border text-center text-md font-light dark:border-neutral-500 font-[500]">
+                        <table className="border text-center text-md font-light dark:border-neutral-500 font-[500] table-auto">
                             <caption className="caption-top py-4 text-lg md:text-3xl font-bold">
                                 Table : Users not applied in any Courses
                             </caption>
@@ -338,7 +338,7 @@ const UserTable = () => {
             <div className="py-4 bg-white mx-8">
                 <div className=" sm:-mx-6 lg:-mx-8 bg-white w-full md:px-3 lg:px-3">
                     <div className="flex md:flex-col lg:flex-col items-center overflow-auto h-full w-[100vw] py-2 sm:px-6 lg:px-8">
-                        <table className="border text-center text-md font-light dark:border-neutral-500 font-[500]">
+                        <table className="border text-center text-md font-light dark:border-neutral-500 font-[500] table-auto">
                             <caption className="caption-top py-4 text-lg md:text-3xl font-bold">
                                 Table : Users applied for Get In Touch
                             </caption>
