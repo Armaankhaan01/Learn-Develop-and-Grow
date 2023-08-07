@@ -141,8 +141,8 @@ const Dashboard = () => {
       <Helmet>
         <title>Dashboard</title>
       </Helmet>
-      <div className="w-full py-[2rem] lg:mt-[4rem] mb-[4rem] lg:mb-[1rem] px-4 h-full mt-10 z-10 ">
-        <div className="max-w-full mx-auto grid lg:grid-cols-2 items-center ">
+      <div className="w-full py-[2rem] lg:mt-[4rem] mb-[4rem] lg:mb-[1rem] px-4 h-full mt-10 z-10 lg:py-[4rem]">
+        <div className="max-w-full mx-auto grid lg:grid-cols-2 items-center">
           <video
             controls
             muted
@@ -152,21 +152,21 @@ const Dashboard = () => {
             className="rounded-[3%] mx-auto my-4 lg:w-[40vw]"
           ></video>
           <div>
-            <p className="text-white font-bold lg:text-4xl lg:p-5 md:text-3xl text-start sm:text-3xl text-2xl mx-4 lg:mx-auto">
+            <p className="text-white font-bold lg:text-4xl lg:px-5 md:text-2xl text-start sm:text-3xl text-2xl mx-4 lg:mx-auto">
               Hey
               <span className="text-[red] font-extrabold">
                 {" "}
                 {users.username}
               </span>
             </p>
-            <div className="font-medium text-white lg:pb-5 md:text-2xl text-xl md:ml-4  text-center sm:text-left mt-6 md:mt-2 sm:mx-4 pl-8">
+            <div className="font-medium text-white lg:pb-5 md:text-2xl text-xl md:ml-4  text-center sm:text-left mt-6 md:mt-2 sm:mx-4 pl-4">
               <p>
                 Unleash and empower Your True Potential with Learn Develop &{" "}
                 <span className="text-[red] font-bold ">Grow</span>.
               </p>
             </div>
-            <p className="font-medium text-white text-center lg:pb-5 text-xl md:text-2xl lg:text-3xl md:ml-6 mx-3 mt-6 md:mt-2 sm:mx-8 md:mb-2 mb-6">
-              “India Sikhega To Aur Bhi Aage Badega.”
+            <p className="font-medium text-white text-center lg:pb-5 text-lg sm:text-xl md:text-2xl lg:text-3xl md:ml-6 mx-3 mt-6 md:mt-2 sm:mx-8 md:mb-2 mb-6">
+              “India Sikhega To Orbhi Age Badega.”
             </p>
             <div className="font-medium text-white lg:pb-5 md:text-2xl text-xl md:ml-4 mx-1 mt-6 md:mt-2 sm:mx-4 pl-8">
               <p>
