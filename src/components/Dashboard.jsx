@@ -413,7 +413,7 @@ const Dashboard = () => {
                       </li>
                       <li className="py-4 mx-8">
                         Two Excursions in a year. – <br />
-                        a. A.Industry visit <br />
+                        A.Industry visit <br />
                         B.Leisure Trip
                       </li>
                       <li className="py-4 mx-8">
