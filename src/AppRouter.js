@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import React from 'react';
+import React from "react";
 
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
@@ -17,11 +17,8 @@ import CourseStandard from "./components/CourseStandard";
 import CoursePremium from "./components/CoursePremium";
 import AdminPanel from "./components/AdminPanel";
 import PrivateRoute from "./components/ProtectedRoute";
-// import PrivateOutlet from "./components/PrivateOutlet"; // it secure routes diffrently 
+// import PrivateOutlet from "./components/PrivateOutlet"; // it secure routes diffrently
 import Dashboard from "./components/Dashboard";
-
-
-
 
 function AppRouter() {
   return (
@@ -29,22 +26,35 @@ function AppRouter() {
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route
+            path="/"
+            element={
+              <>
+                <Home />
+                <Contact />
+                <Testimonials />
+                <ProfessorReviewSection />
+              </>
+            }
+          />
           <Route path="/email" element={<Connect />} />
           <Route path="/community" element={<Community />} />
           <Route path="/courses" element={<Courses />} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/community" element={<Community />} />
-          <Route path="/admin-data" element={<PrivateRoute>{<AdminPanel />}</PrivateRoute>} />
-          <Route path="/dashboard" element={<PrivateRoute>{<Dashboard />}</PrivateRoute>} />
+          <Route
+            path="/admin-data"
+            element={<PrivateRoute>{<AdminPanel />}</PrivateRoute>}
+          />
+          <Route
+            path="/dashboard"
+            element={<PrivateRoute>{<Dashboard />}</PrivateRoute>}
+          />
           <Route path="/course-standard" element={<CourseStandard />} />
           <Route path="/course-premium" element={<CoursePremium />} />
           {/* Add other routes as needed */}
         </Routes>
-        <Contact />
-        <Testimonials />
-        <ProfessorReviewSection />
         <FAQSection />
         <Footer />
       </BrowserRouter>
@@ -52,4 +62,3 @@ function AppRouter() {
   );
 }
 export default AppRouter;
-

@@ -277,15 +277,15 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
-      <div className="w-full pt-[6rem] pb-[2rem] bg-white px-5 " id="SCourse">
-        <h1 className="text-[#000300] text-5xl md:text-5xl lg:text-6xl font-bold text-center mt-[-2rem] mb-[4rem]">
-          Check out our <span className="text-[red]">courses.</span>
+      <div className="w-full pt-[6rem] pb-[2rem] bg-white px-5" id="SCourse">
+        <h1 className="text-[#000300] text-5xl md:text-5xl lg:text-6xl font-bold text-center mt-[-2rem] mb-[2rem]">
+          Check out our <span className="text-[red]">courses</span>
         </h1>
         <h1 className="text-3xl font-bold text-center py-6 text-[red]">
           Standard Course
         </h1>
-        <div className="max-w-[1240px] mx-auto grid md:grid-cols-2 gap-8 lg:text-xl ">
-          <div className="w-full flex flex-col p-4 rounded-lg">
+        <div className="max-w-[1240px] mx-auto grid md:grid-cols-2 gap-8 lg:text-xl shadow-lg rounded-xl">
+          <div className="w-full flex flex-col p-4">
             <div className="text-start font-medium">
               <ol className="list-decimal list-outside">
                 <li className="py-4 mx-8 ">ENGLISH SPEAKING SKILL</li>
@@ -315,7 +315,10 @@ const Dashboard = () => {
           </div>
         </div>
         <div>
-          <div className=" max-w-[1240px] mx-auto my-8" id="PCourse">
+          <div
+            className=" max-w-[1240px] mx-auto my-8 shadow-lg rounded-xl "
+            id="PCourse"
+          >
             <h1
               className="text-3xl font-bold text-center py-8 text-[red]"
               id="PCourse"
@@ -357,132 +360,130 @@ const Dashboard = () => {
                     <li className="py-4 mx-8">FINANCIAL INTELLIGENCE</li>
                   </ol>
                 </div>
-                <div className="font-medium text-left lg:text-xl">
-                  <p className="py-5 text-xl mx-8 text-[red]">
-                    Additional Benefits Why will you choose this course?
-                  </p>
-                  <ul className=" list-decimal list-outside">
-                    <ul className="list-decimal list-outside">
-                      <li className="py-4 mx-8">
-                        We will provide you community support & hand hold
-                        support to develop you.
-                      </li>
-                      <li className="py-4 mx-8">
-                        Verbal & written examination will be taken.
-                      </li>
-                      <li className="py-4 mx-8">
-                        Recognition for outstanding performers.
-                      </li>
-                      <li className="py-4 mx-8">Get free career counseling.</li>
-                      <li className="py-4 mx-8">
-                        We not only teach spoken English but how to talk with
-                        conviction, how to convince someone & objection
-                        handling.
-                      </li>
-                      <li className="py-4 mx-8">
-                        We will develop success habits within you, we will teach
-                        you ethics & discipline. We will help you to build a
-                        strong growth mindset, we will boost your will power, we
-                        will help you to set a strong mission & vision of your
-                        life.
-                      </li>
-                      <li className="py-4 mx-8">
-                        We provide motivational contents to stay motivated &
-                        focused.
-                      </li>
-                      <li className="py-4 mx-8">
-                        We will train you how to use the Albert Mehrabian’s
-                        7-38-55 Rule to negotiate, convince & talk effectively.
-                      </li>
-                      <li className="py-4 mx-8">
-                        We will unleash & empower your true potential.
-                      </li>
-                      <li className="py-4 mx-8">
-                        According to Dale Carnegie Foundation Report 85% of an
-                        individual’s success depends on his ability to lead,
-                        influence & negotiate. We will train you for the same.
-                      </li>
-                      <li className="py-4 mx-8">
-                        We will prepare you for job interviews.
-                      </li>
-                      <li className="py-4 mx-8">
-                        We will transform fresher students to HOD level.
-                      </li>
-                      <li className="py-4 mx-8">
-                        We will foster the leadership skill within you.
-                      </li>
-                      <li className="py-4 mx-8">
-                        Two Excursions in a year. – <br />
-                        A.Industry visit <br />
-                        B.Leisure Trip
-                      </li>
-                      <li className="py-4 mx-8">
-                        After course completion get a chance to interact with
-                        the industry experts.
-                      </li>
-                      <li className="py-4 mx-8">
-                        After course completion certification provided from
-                        Learn Develop & grow.
-                      </li>
-                    </ul>
-                  </ul>
-                </div>
               </div>
-              <div className="flex items-center h-[250px] sticky top-[20vh] text-center my-8">
-                <div>
-                  <p className="py-2 text-xl mx-8 text-[red]">
-                    Certificate Provided
-                  </p>
-                  <p className="py-5 text-xl mx-8">Duration → 12 months</p>
-                  <p className="text-4xl text-center font-bold mx-4">
-                    <span className="text-[16px]">Only</span> Rs 1000 /-{" "}
-                    <span className="text-[16px]">per month</span>
-                  </p>
-                  <button
-                    onClick={enrollPremium}
-                    className="bg-[red] w-[150px] md:w-[180px] rounded-md my-6 mx-auto font-medium px-6 py-3 text-white lg:text-xl"
-                    disabled={Papplied}
-                  >
-                    {PbuttonText}
-                  </button>
+              <div className="font-medium text-left lg:text-xl">
+                <p className="py-5 text-xl mx-8 text-[red]">
+                  Additional Benefits Why will you choose this course?
+                </p>
+                <ul className=" list-decimal list-outside">
+                  <ul className="list-decimal list-outside">
+                    <li className="py-4 mx-8">
+                      We will provide you community support & hand hold support
+                      to develop you.
+                    </li>
+                    <li className="py-4 mx-8">
+                      Verbal & written examination will be taken.
+                    </li>
+                    <li className="py-4 mx-8">
+                      Recognition for outstanding performers.
+                    </li>
+                    <li className="py-4 mx-8">Get free career counseling.</li>
+                    <li className="py-4 mx-8">
+                      We not only teach spoken English but how to talk with
+                      conviction, how to convince someone & objection handling.
+                    </li>
+                    <li className="py-4 mx-8">
+                      We will develop success habits within you, we will teach
+                      you ethics & discipline. We will help you to build a
+                      strong growth mindset, we will boost your will power, we
+                      will help you to set a strong mission & vision of your
+                      life.
+                    </li>
+                    <li className="py-4 mx-8">
+                      We provide motivational contents to stay motivated &
+                      focused.
+                    </li>
+                    <li className="py-4 mx-8">
+                      We will train you how to use the Albert Mehrabian’s
+                      7-38-55 Rule to negotiate, convince & talk effectively.
+                    </li>
+                    <li className="py-4 mx-8">
+                      We will unleash & empower your true potential.
+                    </li>
+                    <li className="py-4 mx-8">
+                      According to Dale Carnegie Foundation Report 85% of an
+                      individual’s success depends on his ability to lead,
+                      influence & negotiate. We will train you for the same.
+                    </li>
+                    <li className="py-4 mx-8">
+                      We will prepare you for job interviews.
+                    </li>
+                    <li className="py-4 mx-8">
+                      We will transform fresher students to HOD level.
+                    </li>
+                    <li className="py-4 mx-8">
+                      We will foster the leadership skill within you.
+                    </li>
+                    <li className="py-4 mx-8">
+                      Two Excursions in a year. – <br />
+                      A.Industry visit <br />
+                      B.Leisure Trip
+                    </li>
+                    <li className="py-4 mx-8">
+                      After course completion get a chance to interact with the
+                      industry experts.
+                    </li>
+                    <li className="py-4 mx-8">
+                      After course completion certification provided from Learn
+                      Develop & grow.
+                    </li>
+                  </ul>
+                </ul>
+                <div className="flex flex-row items-ccenter content-center h-[250px] text-center my-8">
+                  <div>
+                    <p className="py-2 text-xl mx-8 text-[red]">
+                      Certificate Provided
+                    </p>
+                    <p className="py-5 text-xl mx-8">Duration → 12 months</p>
+                    <p className="text-4xl text-center font-bold mx-4">
+                      <span className="text-[16px]">Only</span> Rs 1000 /-{" "}
+                      <span className="text-[16px]">per month</span>
+                    </p>
+                    <button
+                      onClick={enrollPremium}
+                      className="bg-[red] w-[150px] md:w-[180px] rounded-md my-6 mx-auto font-medium px-6 py-3 text-white lg:text-xl"
+                      disabled={Papplied}
+                    >
+                      {PbuttonText}
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div
-        className="w-full py-[25vh] px-4 bg-white h-screen md:flex content-center items-center text-center"
-        id="mission"
-      >
-        <h1 className="text-[#000300] text-5xl md:text-5xl lg:text-6xl font-bold text-center mt-[-2rem] mb-[2rem]">
-          Our <span className="text-[red]">Mission</span>
-        </h1>
-        <div className="max-w-[1240px] mx-auto grid ">
-          <div className="w-full flex flex-col items-center text-start font-medium text-xl">
-            <ol className="list-decimal list-outside ">
-              <li className="py-4 mx-8">
-                Your <span className="text-[red]">Development </span>and
-                <span className="text-[red]"> Growth</span>.
-              </li>
-              <li className="py-4 mx-8">
-                To Remove <span className="text-[red]">Hunger</span> &
-                <span className="text-[red]"> Poverty</span> through eductaion
-                and financial intelligence.
-              </li>
-              <li className="py-4  mx-8">
-                Incorporate{" "}
-                <span className="text-[red]">
-                  personality development program
-                </span>{" "}
-                &
-                <span className="text-[red]">
-                  {" "}
-                  leadership development program
-                </span>{" "}
-                in Indian education system.
-              </li>
-            </ol>
+      <div className="w-full py-[25vh] px-4 bg-white h-screen" id="mission">
+        <div className="md:flex content-center items-center text-center shadow-lg rounded-lg py-5 hover:scale-95 ">
+          <h1 className="text-[#000300] text-5xl md:text-5xl lg:text-6xl font-bold text-center mt-[-2rem] mb-[2rem]">
+            Our <span className="text-[red]">Mission</span>
+          </h1>
+          <div className="max-w-[1240px] mx-auto grid ">
+            <div className="w-full flex flex-col items-center text-start font-medium text-xl">
+              <ol className="list-decimal list-outside ">
+                <li className="py-4 mx-8">
+                  Your <span className="text-[red]">Development </span>and
+                  <span className="text-[red]"> Growth</span>.
+                </li>
+                <li className="py-4 mx-8">
+                  To Remove <span className="text-[red]">Hunger</span> &
+                  <span className="text-[red]"> Poverty</span> through eductaion
+                  and financial intelligence.
+                </li>
+                <li className="py-4  mx-8">
+                  Incorporate{" "}
+                  <span className="text-[red]">
+                    personality development program
+                  </span>{" "}
+                  &
+                  <span className="text-[red]">
+                    {" "}
+                    leadership development program
+                  </span>{" "}
+                  in Indian education system.
+                </li>
+              </ol>
+            </div>
           </div>
         </div>
       </div>
