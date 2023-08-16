@@ -14,7 +14,7 @@ const PCourses = () => {
           <p className="pt-3 pb-5 text-2xl font-bold text-center border-b mx-8 text-[red]">
             In This Course What We Will Teach You{" "}
           </p>
-          <div className="text-start font-medium">
+          <div className="text-start font-medium lg:text-xl">
             <ol className="list-decimal list-outside">
               <li className="py-2 border-b mx-8">ENGLISH SPEAKING SKILL</li>
               <li className="py-2 border-b mx-8">COMMUNICATION SKILL</li>
@@ -47,35 +47,68 @@ const PCourses = () => {
               <li className="py-2 border-b mx-8">FINANCIAL INTELLIGENCE</li>
             </ol>
           </div>
-          <div className="font-medium text-left">
+          <div className="font-medium text-left lg:text-xl">
             <p className="py-5 text-xl mx-8 text-[red]">
               Additional Benefits Why will you choose this course?
             </p>
             <ul className=" list-decimal list-outside">
-              <li className="py-2 border-b mx-8">
-                After course completion certification provided from Learn
-                Develop & grow.
+              <li className="py-4 mx-8">
+                We will provide you community support & hand hold support to
+                develop you.
               </li>
-              <li className="py-2 border-b mx-8">
+              <li className="py-4 mx-8">
+                Verbal & written examination will be taken.
+              </li>
+              <li className="py-4 mx-8">
+                Recognition for outstanding performers.
+              </li>
+              <li className="py-4 mx-8">Get free career counseling.</li>
+              <li className="py-4 mx-8">
+                We not only teach spoken English but how to talk with
+                conviction, how to convince someone & objection handling.
+              </li>
+              <li className="py-4 mx-8">
+                We will develop success habits within you, we will teach you
+                ethics & discipline. We will help you to build a strong growth
+                mindset, we will boost your will power, we will help you to set
+                a strong mission & vision of your life.
+              </li>
+              <li className="py-4 mx-8">
+                We provide motivational contents to stay motivated & focused.
+              </li>
+              <li className="py-4 mx-8">
+                We will train you how to use the Albert Mehrabian’s 7-38-55 Rule
+                to negotiate, convince & talk effectively.
+              </li>
+              <li className="py-4 mx-8">
+                We will unleash & empower your true potential.
+              </li>
+              <li className="py-4 mx-8">
+                According to Dale Carnegie Foundation Report 85% of an
+                individual’s success depends on his ability to lead, influence &
+                negotiate. We will train you for the same.
+              </li>
+              <li className="py-4 mx-8">
+                We will prepare you for job interviews.
+              </li>
+              <li className="py-4 mx-8">
+                We will transform fresher students to HOD level.
+              </li>
+              <li className="py-4 mx-8">
+                We will foster the leadership skill within you.
+              </li>
+              <li className="py-4 mx-8">
+                Two Excursions in a year. – <br />
+                a. A.Industry visit <br />
+                B.Leisure Trip
+              </li>
+              <li className="py-4 mx-8">
                 After course completion get a chance to interact with the
                 industry experts.
               </li>
-              <li className="py-2 border-b mx-8">
-                Get free career counseling.
-              </li>
-              <li className="py-2 border-b mx-8">
-                Verbal examination will be taken.
-              </li>
-              <li className="py-2 border-b mx-8">
-                Recognition for outstanding performers.
-              </li>
-              <li className="py-2 border-b mx-8">
-                2 Excursions in a year - <br /> a. Industry visit <br /> b.
-                Leisure Trip{" "}
-              </li>
-              <li className="py-2 border-b mx-8">
-                We also help our students to grab the opportunity to study &
-                work in Europe & Middle East to learn, earn & settle.
+              <li className="py-4 mx-8">
+                After course completion certification provided from Learn
+                Develop & grow.
               </li>
             </ul>
             <p className="py-2 text-xl mx-8 text-[red] ">
