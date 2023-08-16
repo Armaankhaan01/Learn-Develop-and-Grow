@@ -200,7 +200,7 @@ const Dashboard = () => {
         <h1 className="text-[#000300] text-5xl md:text-5xl lg:text-6xl font-bold text-center mt-[-2rem] mb-[2rem]">
           What <span className="text-[red]">We</span> do ?
         </h1>
-        <div className="max-w-[1240px] mx-auto grid shadow-lg rounded-xl md:p-10  px-5 scale-95 hover:scale-100">
+        <div className="max-w-[1240px] mx-auto grid shadow-lg rounded-xl md:p-10  px-5 scale-95 hover:scale-100 duration-500 ease-in">
           <div className="w-full flex flex-col rounded-lg items-center text-start font-medium text-xl">
             <ol className="list-decimal list-outside ">
               <li className="py-4 mx-8">
@@ -284,7 +284,7 @@ const Dashboard = () => {
         <h1 className="text-3xl font-bold text-center py-6 text-[red]">
           Standard Course
         </h1>
-        <div className="max-w-[1240px] mx-auto grid md:grid-cols-2 gap-8 lg:text-xl shadow-lg rounded-xl scale-95 hover:scale-100">
+        <div className="max-w-[1240px] mx-auto grid md:grid-cols-2 gap-8 lg:text-xl shadow-lg rounded-xl scale-95 hover:scale-100 duration-500 ease-in">
           <div className="w-full flex flex-col p-4">
             <div className="text-start font-medium">
               <ol className="list-decimal list-outside">
@@ -316,7 +316,7 @@ const Dashboard = () => {
         </div>
         <div>
           <div
-            className=" max-w-[1240px] mx-auto my-8 shadow-lg rounded-xl scale-95 hover:scale-100"
+            className=" max-w-[1240px] mx-auto my-8 shadow-lg rounded-xl scale-95 hover:scale-100 duration-500 ease-in"
             id="PCourse"
           >
             <h1
@@ -454,7 +454,7 @@ const Dashboard = () => {
         </div>
       </div>
       <div className="w-full py-[25vh] px-4 bg-white h-screen" id="mission">
-        <div className="md:flex content-center items-center text-center shadow-lg rounded-lg py-5 scale-95 hover:scale-100 ">
+        <div className="md:flex content-center items-center text-center shadow-lg rounded-lg py-5 scale-95 hover:scale-100 duration-500 ease-in ">
           <h1 className="text-[#000300] text-5xl md:text-5xl lg:text-6xl font-bold text-center mt-[-2rem] mb-[2rem]">
             Our <span className="text-[red]">Mission</span>
           </h1>
